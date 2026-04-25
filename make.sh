@@ -1,8 +1,7 @@
 #!/bin/bash
 
-go build ./wol.go
-go build ./md-graph.go
-go build ./java_analyzer.go
-go build ./blind-drop-t.go
-go build ./blind-drop.go
-
+CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-s -w' -o ./wol.go
+CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-s -w' -o ./md-graph.go
+CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-s -w' -o ./java_analyzer.go
+CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-s -w' -o ./blind-drop-t.go
+CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-s -w' -o ./blind-drop blind-drop.go
